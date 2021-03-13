@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav"
+    app:startDestination="@id/fragmentFeed">
+
+    <fragment
+        android:id="@+id/fragmentFeed"
+        android:name="com.example.noteappfinish.view.FragmentFeed"
+        android:label="FragmentFeed" >
+        <action
+            android:id="@+id/action_fragmentFeed_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" />
+        <action
+            android:id="@+id/action_fragmentFeed_to_fragmentUpdate"
+            app:destination="@id/fragmentUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAdd"
+        android:name="com.example.noteappfinish.view.FragmentAdd"
+        android:label="FragmentAdd" >
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentFeed"
+            app:destination="@id/fragmentFeed" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUpdate"
+        android:name="com.example.noteappfinish.view.FragmentUpdate"
+        android:label="FragmentUpdate" >
+        <action
+            android:id="@+id/action_fragmentUpdate_to_fragmentFeed"
+            app:destination="@id/fragmentFeed" />
+        <argument
+            android:name="note"
+            app:argType="com.example.noteappfinish.model.Note"
+            app:nullable="true" />
+    </fragment>
+</navigation>
